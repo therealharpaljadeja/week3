@@ -9,7 +9,7 @@ include "../../node_modules/circomlib/circuits/poseidon.circom";
     String Mastermind
     Code Maker has a random string (hidden).
     Code Breaker is supposed to guess the string.
-    For simplicity purpose, the string length is 5 and the letter are case-insensitive. 
+    For simplicity purpose, the string length is 5, the letter are case-insensitive and the letters are mapped to numbers.  
 */
 
 template MastermindVariation() {
