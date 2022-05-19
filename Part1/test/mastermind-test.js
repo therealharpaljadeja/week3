@@ -1,5 +1,6 @@
 //[assignment] write your own unit test to show that your Mastermind variation circuit is working as expected
 const chai = require("chai");
+const path = require("path");
 const buildPoseidon = require("circomlibjs").buildPoseidon;
 
 const wasm_tester = require("circom_tester").wasm;
@@ -7,9 +8,12 @@ const wasm_tester = require("circom_tester").wasm;
 const assert = chai.assert;
 
 describe("String Mastermind test", function () {
-	it("", async () => {
+	it("Check if the code breaker broke the code", async () => {
 		const circuit = await wasm_tester(
-			"../contracts/circuits/MastermindVariation.circom"
+			path.join(
+				__dirname,
+				"../contracts/circuits/MastermindVariation.circom"
+			)
 		);
 		await circuit.loadConstraints();
 		let poseidon = await buildPoseidon();
